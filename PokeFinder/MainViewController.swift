@@ -150,7 +150,7 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     @IBAction func spotPokemon(_ sender: UIButton) {
-        
+
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         
         // select random pokemon

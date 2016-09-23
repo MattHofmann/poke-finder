@@ -33,12 +33,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v9y-Cz-KPA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="39S-8c-voQ"/>
                             <constraint firstItem="hb3-qS-VJw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4yE-Wq-LmB"/>
-                            <constraint firstAttribute="trailing" secondItem="v9y-Cz-KPA" secondAttribute="trailing" id="ITr-qT-mme"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v9y-Cz-KPA" secondAttribute="bottom" id="L9e-3t-yLf"/>
-                            <constraint firstItem="v9y-Cz-KPA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wxp-FA-CMf"/>
+                            <constraint firstAttribute="trailing" secondItem="v9y-Cz-KPA" secondAttribute="trailing" id="Xhk-b1-iEx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hb3-qS-VJw" secondAttribute="bottom" constant="10" id="kL0-Qx-2TB"/>
+                            <constraint firstItem="v9y-Cz-KPA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pLJ-sI-nbL"/>
+                            <constraint firstItem="v9y-Cz-KPA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pw4-vM-wdZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v9y-Cz-KPA" secondAttribute="bottom" id="ytC-se-Cm9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="136.5" y="138.5"/>
         </scene>
     </scenes>
     <resources>

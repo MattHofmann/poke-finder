@@ -13,6 +13,7 @@
 		B47930CC1D94FE2C00D19D84 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = B47930C51D94FE2B00D19D84 /* GFGeoHash.m */; };
 		B47930CD1D94FE2C00D19D84 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B47930C71D94FE2B00D19D84 /* GFGeoHashQuery.m */; };
 		B47930CE1D94FE2C00D19D84 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B47930C91D94FE2B00D19D84 /* GFQuery.m */; };
+		B47930D11D9502DC00D19D84 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47930D01D9502DC00D19D84 /* PokeAnnotation.swift */; };
 		B4DCD6C31D94E4EA00580364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DCD6C21D94E4EA00580364 /* AppDelegate.swift */; };
 		B4DCD6C51D94E4EA00580364 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DCD6C41D94E4EA00580364 /* MainViewController.swift */; };
 		B4DCD6C81D94E4EA00580364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DCD6C61D94E4EA00580364 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		B47930C81D94FE2B00D19D84 /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
 		B47930C91D94FE2B00D19D84 /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
 		B47930CF1D94FF6500D19D84 /* PokeFinder-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PokeFinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		B47930D01D9502DC00D19D84 /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 		B4DCD6BF1D94E4EA00580364 /* PokeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DCD6C21D94E4EA00580364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DCD6C41D94E4EA00580364 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -137,12 +139,12 @@
 				B4DCD6D41D94E76D00580364 /* Controller */,
 				B4DCD6D71D94E78400580364 /* Resources */,
 				B4DCD6C21D94E4EA00580364 /* AppDelegate.swift */,
+				B47930CF1D94FF6500D19D84 /* PokeFinder-Bridging-Header.h */,
 				B4DCD6C61D94E4EA00580364 /* Main.storyboard */,
 				B4DCD6C91D94E4EA00580364 /* Assets.xcassets */,
 				B4DCD6CB1D94E4EA00580364 /* LaunchScreen.storyboard */,
 				B4DCD6CE1D94E4EA00580364 /* Info.plist */,
 				B4DCD6D81D94F20B00580364 /* GoogleService-Info.plist */,
-				B47930CF1D94FF6500D19D84 /* PokeFinder-Bridging-Header.h */,
 			);
 			path = PokeFinder;
 			sourceTree = "<group>";
@@ -165,6 +167,7 @@
 		B4DCD6D61D94E77F00580364 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B47930D01D9502DC00D19D84 /* PokeAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47930CB1D94FE2B00D19D84 /* GFBase32Utils.m in Sources */,
+				B47930D11D9502DC00D19D84 /* PokeAnnotation.swift in Sources */,
 				B4DCD6C51D94E4EA00580364 /* MainViewController.swift in Sources */,
 				B47930CC1D94FE2C00D19D84 /* GFGeoHash.m in Sources */,
 				B4DCD6C31D94E4EA00580364 /* AppDelegate.swift in Sources */,

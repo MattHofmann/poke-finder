@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -15,20 +16,26 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     let locationManager = CLLocationManager()
     var mapHasCenteredOnce = false
-    
     var geoFire: GeoFire!
+    var geoFireRef: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // mapview delegates
         mapView.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
-        
-        locationAuthStatus()
-
+        // firebase database reference
+        geoFireRef = FIRDatabase.database().reference()
+        // init geofire
+        geoFire = GeoFire(firebaseRef: geoFireRef)
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        locationAuthStatus()
+    }
+    
     // check for location Authorization
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -78,7 +85,33 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
 
+    func createSighting(forLocation location: CLLocation, withPokemon pokeId: Int) {
+        // call geoFirebase and set a gps location
+        geoFire.setLocation(location, forKey: "\(pokeId)")
+    }
+    
+    
+    func showSightingsOnMap(location: CLLocation) {
+        let circleQuery = geoFire!.query(at: location, withRadius: 2.5)
+        
+        _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
+            
+            if let key = key, let location = location {
+                let anno = PokeAnnotation(coordinate: location.coordinate, pokemonNumber: Int(key)!)
+                self.mapView.addAnnotation(anno)
+            }
+        })
+    }
+    
+    
     @IBAction func spotPokemon(_ sender: UIButton) {
+        
+        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        
+        // select random pokemon
+        let rand = arc4random_uniform(151) + 1
+        // create a sighting
+        createSighting(forLocation: loc, withPokemon: Int(rand))
     }
     
 }

@@ -10,9 +10,11 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 
-class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,DataSentSentDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var selectedPokemon: Pokemon!
     
     let locationManager = CLLocationManager()
     var mapHasCenteredOnce = false
@@ -150,14 +152,41 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     @IBAction func spotPokemon(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "PokemonPickerVC", sender: self)
+        
 
+    }
+    
+    
+    func userDidChoosePokemon(data: Pokemon) {
+        selectedPokemon = data
+        
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         
         // select random pokemon
-        let rand = arc4random_uniform(151) + 1
+        // let rand = arc4random_uniform(151) + 1
         // create a sighting
-        createSighting(forLocation: loc, withPokemon: Int(rand))
+        //createSighting(forLocation: loc, withPokemon: Int(rand))
+        
+        // create a sighting with pokemon from VC
+        createSighting(forLocation: loc, withPokemon: selectedPokemon.pokedexId)
+        
     }
+
+    
+    // MARK: perpareSegue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonPickerVC" {
+            if let pickPokemonVC: PickPokemonViewController  = segue.destination as? PickPokemonViewController {
+                //if let poke = sender as? Pokemon {
+                  //  pickPokemonVC.pokemon = poke
+                pickPokemonVC.delegate = self
+
+            }
+        }
+    }
+    
     
 }
 

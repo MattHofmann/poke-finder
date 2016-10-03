@@ -11,3 +11,6 @@ Screenshots:
 ![pokefinder_screen_06](https://cloud.githubusercontent.com/assets/20715639/19028557/6678bc7a-8978-11e6-8965-30b8db7c3b6d.png)
 
 This App is for educational purpose only.
+
+Resources:
+- Font "Pokemon" by IPBP.
